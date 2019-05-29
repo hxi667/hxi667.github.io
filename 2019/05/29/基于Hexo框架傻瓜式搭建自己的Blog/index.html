@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="前言 Hexo 是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog 笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异) 开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访问  1 安">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Hexo框架傻瓜式搭建自己的Blog">
+<meta property="og:url" content="http://yoursite.com/2019/05/29/基于Hexo框架傻瓜式搭建自己的Blog/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言 Hexo 是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog 笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异) 开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访问  1 安">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-29T07:02:56.889Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="基于Hexo框架傻瓜式搭建自己的Blog">
+<meta name="twitter:description" content="前言 Hexo 是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog 笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异) 开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访问  1 安">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/29/基于Hexo框架傻瓜式搭建自己的Blog/">
 
 
 
 
 
-  <title>Hexo</title>
+  <title>基于Hexo框架傻瓜式搭建自己的Blog | Hexo</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/29/基于Hexo框架傻瓜式搭建自己的Blog/" itemprop="url">基于Hexo框架傻瓜式搭建自己的Blog</a></h1>
+          <h1 class="post-title" itemprop="name headline">基于Hexo框架傻瓜式搭建自己的Blog</h1>
         
 
         <div class="post-meta">
@@ -298,9 +299,7 @@
       
 
       
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
 <li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog</li>
 <li>笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异)</li>
 <li>开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访问</li>
@@ -392,8 +391,6 @@
 </li>
 </ul>
 <h2 id="一些资料"><a href="#一些资料" class="headerlink" title="一些资料"></a>一些资料</h2>
-          
-        
       
     </div>
     
@@ -410,12 +407,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -425,10 +422,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -436,6 +434,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -456,8 +458,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -499,6 +510,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装Node-js"><span class="nav-number">2.</span> <span class="nav-text">1 安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">2 安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-创建站点"><span class="nav-number">4.</span> <span class="nav-text">3 创建站点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-添加主题"><span class="nav-number">5.</span> <span class="nav-text">4 添加主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-创建Blog"><span class="nav-number">6.</span> <span class="nav-text">5 创建Blog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-本地预览"><span class="nav-number">7.</span> <span class="nav-text">6 本地预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-部署到GitHub"><span class="nav-number">8.</span> <span class="nav-text">7 部署到GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些资料"><span class="nav-number">9.</span> <span class="nav-text">一些资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -632,6 +659,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
