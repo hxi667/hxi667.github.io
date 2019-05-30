@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang>
+<html class="theme-next mist use-motion" lang="zh-Han">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,28 +50,25 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
+  <link rel="mask-icon" href="/images/logo.svg?v=" color="#222">
 
 
 
+
+
+  <meta name="keywords" content="用Hexo快速搭建个人Blog,">
 
 
 
@@ -79,17 +76,21 @@
 
 
 
-<meta name="description" content="[TOC]  前言 Hexo是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog 笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异) 开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访">
+
+
+
+<meta name="description" content="前言 Hexo是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog 笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异) 开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访问  1 安装">
+<meta name="keywords" content="用Hexo快速搭建个人Blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Hexo框架傻瓜式搭建自己的Blog">
 <meta property="og:url" content="http://yoursite.com/2019/05/29/基于Hexo框架傻瓜式搭建自己的Blog/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="[TOC]  前言 Hexo是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog 笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异) 开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-29T07:40:31.828Z">
+<meta property="og:site_name" content="胥三百亿">
+<meta property="og:description" content="前言 Hexo是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog 笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异) 开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访问  1 安装">
+<meta property="og:locale" content="zh-Han">
+<meta property="og:updated_time" content="2019-05-30T10:29:56.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Hexo框架傻瓜式搭建自己的Blog">
-<meta name="twitter:description" content="[TOC]  前言 Hexo是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog 笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异) 开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访">
+<meta name="twitter:description" content="前言 Hexo是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog 笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异) 开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访问  1 安装">
 
 
 
@@ -97,8 +98,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
+    scheme: 'Mist',
+    version: '',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -125,7 +126,7 @@
 
 
 
-  <title>基于Hexo框架傻瓜式搭建自己的Blog | Hexo</title>
+  <title>基于Hexo框架傻瓜式搭建自己的Blog | 胥三百亿</title>
   
 
 
@@ -137,7 +138,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Han">
 
   
   
@@ -155,7 +156,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">胥三百亿</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -181,19 +182,29 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/首页" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
             
             Home
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
             
             Archives
           </a>
@@ -241,7 +252,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="胥三百亿">
     </span>
 
     
@@ -299,9 +310,7 @@
       
 
       
-        <p>[TOC]</p>
-<hr>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
 <li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog</li>
 <li>笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异)</li>
 <li>开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访问</li>
@@ -412,6 +421,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/用Hexo快速搭建个人Blog/" rel="tag"># 用Hexo快速搭建个人Blog</a>
+          
+        </div>
+      
 
       
       
@@ -488,7 +503,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/">
               
                   <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">posts</span>
@@ -498,6 +513,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
             
 
           </nav>
@@ -565,7 +589,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v</div>
 
 
 
@@ -656,25 +680,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v="></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v="></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
+<script type="text/javascript" src="/js/src/post-details.js?v="></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
 
 
 
