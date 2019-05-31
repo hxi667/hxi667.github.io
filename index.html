@@ -178,7 +178,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/home" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
@@ -340,108 +340,18 @@
 
       
         
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog</li>
-<li>笔者是在win10环境下搭建的，所以下面的教程默认在win10下适用(macOS和win搭建方式大同异)</li>
-<li>开始前默认电脑安装了git工具，后面会利用git工具下载Blog的主题，并把搭建的静态博客托管在GitHub，公网可访问</li>
-</ul>
-<h2 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1 安装Node.js"></a>1 安装Node.js</h2><ul>
-<li><p>Hexo是基于Node.js编写的，所以需要安装一下nodeJs和里面的npm工具</p>
-</li>
-<li><p>从 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a> 官网下载与自己操作系统相对应的文件即可</p>
-<p>我下载的是 <a href="https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi" target="_blank" rel="noopener">node-v10.16.0-x64.msi</a> </p>
-</li>
-<li><p>把下载好并安装后生成的的文件夹添加到系统变量PATH中</p>
-</li>
-<li><p>验证安装：打开cmd,分别输入命令 <code>node -v</code>、<code>npm -v</code> 回车。如果安装成功的话会输出版本信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xihao&gt;node -v</span><br><span class="line">v10.16.0</span><br><span class="line">C:\Users\xihao&gt;npm -v</span><br><span class="line">6.9.0</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>npm换源：在国内使用npm工具的话受网络影响，速度慢且可能出现异常，所以我们进行换源，更换成国内淘宝团队的镜像源，键入命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xihao&gt;npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p>验证换源成功：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xihao&gt;cnpm -v</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2 安装Hexo"></a>2 安装Hexo</h2><ul>
-<li><p>前面git和Node.js安装好后，就可以安装Hexo了</p>
-<p>输入命令：<code>cnpm install -g hexo-cli</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xihao&gt;cnpm install -g hexo-clii</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>验证安装:依旧用<code>hexo -v</code>查看一下版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xihao&gt;hexo -v</span><br></pre></td></tr></table></figure>
-<p>至此就全部安装完了。</p>
-</li>
-</ul>
-<h2 id="3-创建站点"><a href="#3-创建站点" class="headerlink" title="3 创建站点"></a>3 创建站点</h2><p>​    接下来我们就要开始创建我们的Blog的站点</p>
-<ul>
-<li><p>把cmd的路径切换到自己想要存放站点文件的路径下，并创建站点文件夹(My_blog)，笔者放到了f盘符根目录。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xihao&gt;f:</span><br><span class="line">F:\&gt;md My_blog</span><br><span class="line">F:\&gt;cd My_blog</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化Hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F:\My_blog&gt;hexo init</span><br></pre></td></tr></table></figure>
-<p>这样就在My_blog文件夹下创建了站点</p>
-</li>
-<li><p>My_blog站点的文件结构的含义为：</p>
-<p>|- node_modules  ：站点的依赖包<br>|- public                  ：存放生成的页面<br>|- scaffolds             ：生成文章的一些模板<br>|- source                 ：用来存放你的文章<br>|- themes                ：主题<br>|- _config.yml         ：博客站点的配置文件</p>
-</li>
-</ul>
-<h2 id="4-添加主题"><a href="#4-添加主题" class="headerlink" title="4 添加主题"></a>4 添加主题</h2><ul>
-<li><p>在 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> 上挑选自己喜欢的Blog主题，我选择的是 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a> 这款主题，找到相应的 <a href="https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme.git" target="_blank" rel="noopener">GitHub</a> 地址，在博客根目录下，利用git命令 <code>git clone</code> 下来：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F:\My_blog&gt;git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改 <code>My_blog/_config.yml</code> 配置文件的内容，更改配置 <code>theme =  next</code>（注意等号右边有一个空格）</p>
-</li>
-</ul>
-<h2 id="5-创建Blog"><a href="#5-创建Blog" class="headerlink" title="5 创建Blog"></a>5 创建Blog</h2><p>​    这篇Blog就是我们写的第一篇博客</p>
-<ul>
-<li><p>在My_log根目录下，键入命令<code>hexo new &quot;基于Hexo框架傻瓜式搭建自己的Blog&quot;</code> 回车， 就会在F:\My_blog\source\_posts路径下自动生成 <code>基于Hexo框架傻瓜式搭建自己的Blog.md</code>文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">F:\My_blog&gt;hexo new &quot;基于Hexo框架傻瓜式搭建自己的Blog&quot;</span><br><span class="line">INFO  Created: F:\My_blog\source\_posts\基于Hexo框架傻瓜式搭建自己的Blog.md</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>打开编辑 <code>基于Hexo框架傻瓜式搭建自己的Blog.md</code> ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于Hexo框架傻瓜式搭建自己的Blog</span><br><span class="line">date: 2019-05-29 14:35:49</span><br><span class="line">tags:</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 前言</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>这就是你要写的文章了.另外文章的位置一定是在 <code>My_blog\source\_posts</code> 下，改动了位置会导致文章内容显示不出来。</p>
-</li>
-</ul>
-<h2 id="6-本地预览"><a href="#6-本地预览" class="headerlink" title="6 本地预览"></a>6 本地预览</h2><ul>
-<li><p>在你的站点根目录执行 <code>hexo server</code> 命令进行调试：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">F:\My_blog&gt;hexo server</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>此时本地服务已启动，浏览器里打开： <code>http://localhost:1313</code> </p>
-<p>即可访问刚刚写好的第一条博客</p>
-</li>
-</ul>
-<h2 id="7-部署到GitHub"><a href="#7-部署到GitHub" class="headerlink" title="7 部署到GitHub"></a>7 部署到GitHub</h2><p>​    接下来我们将Hexo和GitHub关联起来，也就是将Hexo生成的文章部署到GitHub上</p>
-<ul>
-<li><p>首先在个人的github上创建一个repository，注意仓库名要与自己个github账户名一致，例如：<code>YourgithubName</code>是你的GitHub账户，那么<code>YourgithubName.github.io</code>就是你的仓库名</p>
-</li>
-<li><p>打开站点配置文件 <code>_config.yml</code>，翻到最后，修改为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>（注意：冒号：后都有一个空格）</p>
-</li>
-<li><p>安装部署插件deploy-git，这样你才能用命令部署到GitHub</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F:\My_blog&gt;cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>最后部署（每次修改、添加文章后都要进行这一步）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">F:\My_blog&gt;hexo clean</span><br><span class="line">F:\My_blog&gt;hexo generate</span><br><span class="line">F:\My_blog&gt;hexo deploy</span><br></pre></td></tr></table></figure>
-<p>其中 <code>hexo clean</code>       清除了你之前生成的东西，也可以不加。<br><code>hexo generate</code>          顾名思义，生成静态文章，可以用 hexo g缩写<br><code>hexo deploy</code>              部署文章，可以用hexo d缩写</p>
-<p>注意：deploy时可能要你输入你github的username和password。</p>
-</li>
-<li><p>部署成功后</p>
-<p>过一会儿就可以在<code>http://yourname.github.io</code> 这个网站看到你的博客了！！</p>
-</li>
-</ul>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>​    到这里，一个简单的个人博客我们就已经搭建起来了！关于一些其他个性化的设置，大家可以自己百度去探索，诚然，探索的过程是充满乐趣的。</p>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo官方文档</a></p>
-<p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">hexo史上最全搭建教程</a></p>
-<p><a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">开始使用 - NexT 使用文档</a></p>
-<p><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">hexo的next主题个性化配置教程</a></p>
-
-          
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>是一款基于Node.js的快速、简洁且高效的静态博客框架，因为Hexo的创始者是台湾人，所以对中文的支持很友好，非常适合技术人员搭建自己的Blog
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/29/基于Hexo框架傻瓜式搭建自己的Blog/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </li></ul></div>
     
     
     
@@ -615,6 +525,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>&nbsp访问人数&nbsp||
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>&nbsp访问总量&nbsp|
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
