@@ -87,21 +87,21 @@
 <meta property="og:site_name" content="胥三百亿">
 <meta property="og:description" content="前言本文较为详细的介绍了Docker的概念 通过阅读本文你可以从中知道这些概念：  容器 什么是Docker？ Docker思想、特点 Docker容器主要解决什么问题 容器vs虚拟机 Docker基本概念：镜像（Image），容器（Container），仓库（Repository）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="f:/Hexo_blog/source/_posts/一文弄懂Docker基本概念/1.jpg">
-<meta property="og:image" content="f:/Hexo_blog/source/_posts/一文弄懂Docker基本概念/2.jpg">
-<meta property="og:image" content="c:/Users/xihao/Desktop/docker/3.jpg">
-<meta property="og:image" content="c:/Users/xihao/Desktop/docker/4.jpg">
-<meta property="og:image" content="c:/Users/xihao/Desktop/docker/5.jpg">
-<meta property="og:image" content="c:/Users/xihao/Desktop/docker/6.jpg">
-<meta property="og:image" content="c:/Users/xihao/Desktop/docker/7.jpg">
-<meta property="og:image" content="c:/Users/xihao/Desktop/docker/8.jpg">
-<meta property="og:image" content="c:/Users/xihao/Desktop/docker/9.jpg">
-<meta property="og:image" content="c:/Users/xihao/Desktop/docker/10.jpg">
-<meta property="og:updated_time" content="2019-08-14T03:11:34.491Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/3.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/4.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/5.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/6.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/7.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/8.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/9.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/10.jpg">
+<meta property="og:updated_time" content="2019-08-14T03:20:29.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一文弄懂Docker基本概念">
 <meta name="twitter:description" content="前言本文较为详细的介绍了Docker的概念 通过阅读本文你可以从中知道这些概念：  容器 什么是Docker？ Docker思想、特点 Docker容器主要解决什么问题 容器vs虚拟机 Docker基本概念：镜像（Image），容器（Container），仓库（Repository）">
-<meta name="twitter:image" content="f:/Hexo_blog/source/_posts/一文弄懂Docker基本概念/1.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/1.jpg">
 
 
 
@@ -379,14 +379,14 @@
 </ul>
 <p>通俗解释：</p>
 <p><strong>容器通俗的描述就是一个存放东西的地方，就像书包可以装各种文具、衣柜可以放各种衣服、鞋架可以放各种鞋子一样。我们现在所说的容器存放的东西可能更偏向于应用比如网站、程序甚至是系统环境。</strong></p>
-<p><img src="F:\Hexo_blog\source\_posts\一文弄懂Docker基本概念\1.jpg" alt="1"></p>
+<p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/1.jpg" alt></p>
 <h4 id="1-2-图解物理机、虚拟机与容器"><a href="#1-2-图解物理机、虚拟机与容器" class="headerlink" title="1.2 图解物理机、虚拟机与容器**"></a>1.2 图解物理机、虚拟机与容器**</h4><p>我们先通过网上的图片加深大家对于物理机、虚拟机与容器这三者的理解。</p>
 <p><strong>物理机</strong>：</p>
-<p><img src="F:\Hexo_blog\source\_posts\一文弄懂Docker基本概念\2.jpg" alt="2"></p>
+<p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/2.jpg" alt="2"></p>
 <p><strong>虚拟机：</strong></p>
-<p><img src="C:\Users\xihao\Desktop\docker\3.jpg" alt="3"></p>
+<p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/3.jpg" alt="3"></p>
 <p><strong>容器：</strong></p>
-<p><img src="C:\Users\xihao\Desktop\docker\4.jpg" alt="4"></p>
+<p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/4.jpg" alt="4"></p>
 <p>通过上面这三张抽象图，大概可以通过类比概括出： <strong>容器虚拟化的是操作系统而不是硬件，容器之间是共享同一套操作系统资源的。虚拟机技术是虚拟出一套硬件后，在其上运行一个完整操作系统。因此容器的隔离级别会稍低一些。</strong></p>
 <hr>
 <p>我们对容器这个既陌生又熟悉的概念有了一个初步的认识，下面我们就来看看Docker的一些概念。</p>
@@ -396,7 +396,7 @@
 <li><strong>Docker 能够自动执行重复性任务，例如搭建和配置开发环境，从而解放了开发人员以便他们专注在真正重要的事情上：构建杰出的软件。</strong></li>
 <li><strong>用户可以方便地创建和使用容器，把自己的应用放入容器。容器还可以进行版本管理、复制、分享、修改，就像管理普通的代码一样。</strong></li>
 </ul>
-<p><img src="C:\Users\xihao\Desktop\docker\5.jpg" alt="5"></p>
+<p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/5.jpg" alt="5"></p>
 <h4 id="2-2-Docker思想"><a href="#2-2-Docker思想" class="headerlink" title="2.2 Docker思想"></a><strong>2.2 Docker思想</strong></h4><ul>
 <li><strong>集装箱</strong></li>
 <li><strong>标准化：</strong> ①运输方式 ② 存储方式 ③ API接口</li>
@@ -419,15 +419,15 @@
 <p>每当说起容器，我们不得不将其与虚拟机做一个比较。对于两者无所谓谁会取代谁，而是两者可以和谐共存。</p>
 <h3 id="三、-容器-VS-虚拟机"><a href="#三、-容器-VS-虚拟机" class="headerlink" title="三、 容器 VS 虚拟机"></a><strong>三、 容器 VS 虚拟机</strong></h3><p>简单来说： <strong>容器和虚拟机具有相似的资源隔离和分配优势，但功能有所不同，因为容器虚拟化的是操作系统，而不是硬件，因此容器更容易移植，效率也更高。</strong></p>
 <h4 id="3-1-两者对比图"><a href="#3-1-两者对比图" class="headerlink" title="3.1 两者对比图"></a><strong>3.1 两者对比图</strong></h4><p>传统虚拟机技术是虚拟出一套硬件后，在其上运行一个完整操作系统，在该系统上再运行所需应用进程；而容器内的应用进程直接运行于宿主的内核，容器内没有自己的内核，而且也没有进行硬件虚拟。因此容器要比传统虚拟机更为轻便。</p>
-<p><img src="C:\Users\xihao\Desktop\docker\6.jpg" alt="6"></p>
-<h4 id="3-2-容器与虚拟机-VM-总结"><a href="#3-2-容器与虚拟机-VM-总结" class="headerlink" title="3.2 容器与虚拟机 (VM) 总结"></a><strong>3.2 容器与虚拟机 (VM) 总结</strong></h4><p><img src="C:\Users\xihao\Desktop\docker\7.jpg" alt="7"></p>
+<p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/6.jpg" alt="6"></p>
+<h4 id="3-2-容器与虚拟机-VM-总结"><a href="#3-2-容器与虚拟机-VM-总结" class="headerlink" title="3.2 容器与虚拟机 (VM) 总结"></a><strong>3.2 容器与虚拟机 (VM) 总结</strong></h4><p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/7.jpg" alt="7"></p>
 <ul>
 <li><strong>容器是一个应用层抽象，用于将代码和依赖资源打包在一起。</strong> <strong>多个容器可以在同一台机器上运行，共享操作系统内核，但各自作为独立的进程在用户空间中运行</strong> 。与虚拟机相比， <strong>容器占用的空间较少</strong>（容器镜像大小通常只有几十兆），<strong>瞬间就能完成启动</strong> 。</li>
 <li><strong>虚拟机 (VM) 是一个物理硬件层抽象，用于将一台服务器变成多台服务器。</strong> 管理程序允许多个 VM 在一台机器上运行。每个VM都包含一整套操作系统、一个或多个应用、必要的二进制文件和库资源，因此 <strong>占用大量空间</strong> 。而且 VM <strong>启动也十分缓慢</strong> 。</li>
 </ul>
 <p>通过Docker官网，我们知道了Docker的优势，但是大家也没有必要完全否定虚拟机技术，因为两者有不同的使用场景。<strong>虚拟机更擅长于彻底隔离整个运行环境</strong>。例如，云服务提供商通常采用虚拟机技术隔离不同的用户。而 <strong>Docker通常用于隔离不同的应用</strong> ，例如前端，后端以及数据库。</p>
 <h4 id="3-3-容器与虚拟机-VM-两者是可以共存的"><a href="#3-3-容器与虚拟机-VM-两者是可以共存的" class="headerlink" title="3.3 容器与虚拟机 (VM)两者是可以共存的"></a><strong>3.3 容器与虚拟机 (VM)两者是可以共存的</strong></h4><p>两者无所谓谁会取代谁，两者可以和谐共存。</p>
-<p><img src="C:\Users\xihao\Desktop\docker\8.jpg" alt="8"></p>
+<p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/8.jpg" alt="8"></p>
 <hr>
 <p>Docker中非常重要的三个基本概念，理解了这三个概念，就理解了 Docker 的整个生命周期。</p>
 <h3 id="四-、Docker基本概念"><a href="#四-、Docker基本概念" class="headerlink" title="四 、Docker基本概念"></a><strong>四 、Docker基本概念</strong></h3><p>Docker 包括三个基本概念</p>
@@ -437,7 +437,7 @@
 <li><strong>仓库（Repository）</strong></li>
 </ul>
 <p>理解了这三个概念，就理解了 Docker 的整个生命周期</p>
-<p><img src="C:\Users\xihao\Desktop\docker\9.jpg" alt="9"></p>
+<p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/9.jpg" alt="9"></p>
 <h4 id="4-1-镜像（Image），一个特殊的文件系统"><a href="#4-1-镜像（Image），一个特殊的文件系统" class="headerlink" title="4.1 镜像（Image），一个特殊的文件系统"></a><strong>4.1 镜像（Image），一个特殊的文件系统</strong></h4><p><strong>操作系统分为内核和用户空间</strong>。对于 Linux 而言，内核启动后，会挂载 root 文件系统为其提供用户空间支持。而Docker 镜像（Image），就相当于是一个 root 文件系统。</p>
 <p><strong>Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。</strong> 镜像不包含任何动态数据，其内容在构建之后也不会被改变。</p>
 <p>Docker 设计时，就充分利用 <strong>Union FS</strong>的技术，将其设计为 <strong>分层存储的架构</strong> 。 镜像实际是由多层文件系统联合组成。</p>
@@ -457,7 +457,7 @@
 <hr>
 <p>Docker的概念基本上已经讲完，最后我们谈谈：Build, Ship, and Run。</p>
 <h3 id="五、最后谈谈：Build-Ship-and-Run"><a href="#五、最后谈谈：Build-Ship-and-Run" class="headerlink" title="五、最后谈谈：Build, Ship, and Run"></a><strong>五、最后谈谈：Build, Ship, and Run</strong></h3><p>如果你搜索Docker官网，会发现如下的字样：<strong>“Docker - Build, Ship, and Run Any App, Anywhere”</strong>。那么Build, Ship, and Run到底是在干什么呢？</p>
-<p><img src="C:\Users\xihao\Desktop\docker\10.jpg" alt="10"></p>
+<p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/08/14/%E4%B8%80%E6%96%87%E5%BC%84%E6%87%82Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/10.jpg" alt="10"></p>
 <ul>
 <li><strong>Build（构建镜像）</strong> ： 镜像就像是集装箱包括文件以及运行环境等等资源。</li>
 <li><strong>Ship（运输镜像）</strong> ：主机和仓库间运输，这里的仓库就像是超级码头一样。</li>
