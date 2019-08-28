@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="胥三百亿">
 <meta property="og:description" content="关于go get 安装 golang 官方包可能会失败的解决方案">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-27T03:16:44.072Z">
+<meta property="og:updated_time" content="2019-08-27T07:58:27.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go get golang.org&#x2F;x 包失败解决方法 ">
 <meta name="twitter:description" content="关于go get 安装 golang 官方包可能会失败的解决方案">
@@ -309,7 +309,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  293
+                  292
                 </span>
               
 
@@ -351,7 +351,7 @@
 <p>由于特殊原因，国内使用 go get 安装 golang 官方包可能会失败。例如我在安装golang.org/x/text包时，出现以下错误：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">F:\hello&gt;go get golang.org/x/text</span><br><span class="line"></span><br><span class="line">go get golang.org/x/text: unrecognized import path &quot;golang.org/x/text&quot; (https fetch: Get https://golang.org/x/text?go-get=1: dial tcp 216.239.37.1:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.)</span><br><span class="line"></span><br><span class="line">F:\hello&gt;</span><br></pre></td></tr></table></figure>
 <p>即使用代理设置GoProxy也不行，怎么解决这个问题？</p>
-<p>其实 golang 在 github 上建立了一个<a href="https://github.com/golang" target="_blank" rel="noopener">镜像库</a>，如 &lt;<a href="https://github.com/golang/text即是" target="_blank" rel="noopener">https://github.com/golang/text即是</a> <a href="https://golang.org/x/text" target="_blank" rel="noopener">https://golang.org/x/text</a> 的镜像库</p>
+<p>其实 golang 在 github 上建立了一个<a href="https://github.com/golang" target="_blank" rel="noopener">镜像库</a>，如 <a href="https://github.com/golang/text即是" target="_blank" rel="noopener">https://github.com/golang/text即是</a> <a href="https://golang.org/x/text" target="_blank" rel="noopener">https://golang.org/x/text</a> 的镜像库</p>
 <p>获取 golang.org/x/text 包，其实只需要以下步骤(cmd下)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir %GOPATH%\src\golang.org\x</span><br></pre></td></tr></table></figure>
 <p>然后在$GOPATH/src/golang.org/x路径下：</p>
@@ -399,6 +399,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/28/告别GOPATH，用-go-mod-管理项目/" rel="prev" title="告别GOPATH，用 go mod 管理项目">
+                告别GOPATH，用 go mod 管理项目 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -466,7 +470,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

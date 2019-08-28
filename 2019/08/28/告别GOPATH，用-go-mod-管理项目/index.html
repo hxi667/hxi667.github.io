@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Go,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言如果你还在使用GOPATH作为Go项目代码的存放路径来开发Golang程序，那么你可以参考本文来告别GOPATH,并带给你一个方便的包管理工具go mod">
+<meta name="keywords" content="Go">
+<meta property="og:type" content="article">
+<meta property="og:title" content="告别GOPATH，用 go mod 管理项目">
+<meta property="og:url" content="http://yoursite.com/2019/08/28/告别GOPATH，用-go-mod-管理项目/index.html">
+<meta property="og:site_name" content="胥三百亿">
+<meta property="og:description" content="前言如果你还在使用GOPATH作为Go项目代码的存放路径来开发Golang程序，那么你可以参考本文来告别GOPATH,并带给你一个方便的包管理工具go mod">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/1.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/2.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/3.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/4.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/5.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/6.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/7.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/8.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/9.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/10.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/11.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/12.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/13.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/14.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/15.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/16.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/17.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/18.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/19.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/20.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/21.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/22.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/23.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/24.png">
+<meta property="og:image" content="c:/Users/xihao/Desktop/hello/25.png">
+<meta property="og:updated_time" content="2019-08-28T01:57:11.585Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="告别GOPATH，用 go mod 管理项目">
+<meta name="twitter:description" content="前言如果你还在使用GOPATH作为Go项目代码的存放路径来开发Golang程序，那么你可以参考本文来告别GOPATH,并带给你一个方便的包管理工具go mod">
+<meta name="twitter:image" content="c:/Users/xihao/Desktop/hello/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/28/告别GOPATH，用-go-mod-管理项目/">
+
+
+
+
+
+  <title>告别GOPATH，用 go mod 管理项目 | 胥三百亿</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">胥三百亿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/28/告别GOPATH，用-go-mod-管理项目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="胥三百亿">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="胥三百亿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">告别GOPATH，用 go mod 管理项目</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-28T09:55:13+08:00">
+                2019-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>&nbsp阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果你还在使用GOPATH作为Go项目代码的存放路径来开发Golang程序，那么你可以参考本文来告别GOPATH,并带给你一个方便的<strong>包管理工具go mod</strong></p>
+<a id="more"></a>
+<h3 id="Go-mod简介"><a href="#Go-mod简介" class="headerlink" title="Go mod简介"></a>Go mod简介</h3><p><strong>Go Module是Go会在1.12中正式推出的包管理机制。</strong></p>
+<p>一个模块（Module）是一系列 Go 代码包 的集合，它们保存在同一个文件树中。文件树的根目录中包含了一个 <code>go.mod</code> 文件。<code>go.mod</code> 文件定义了一个模块的 module path，这就是模块根目录的导入路径。<code>go.mod</code> 文件还定义了模块的 <em>dependency requirements（依赖项要求）</em>，即为了编译本模块，需要用到哪些其它的模块。每一项依赖项要求都包含了依赖项的 module path，还要指定它的语义版本号</p>
+<p>在Go1.11时,官方推出了go mod作为官方的依赖管理工具。而go mod与之前的利用vendor特性的依赖管理工具的不同点在于，go mod 更类似于maven这种本地缓存库的管理方式,不论你有多少个工程，只要你引用的依赖的版本是一致的，那么在本地就只会有一份依赖文件的存在。而vendor即使依赖的版本是相同的，但如果在不同的工程中进行了引用，也会在工程目录下的vendor产生一份依赖文件。</p>
+<p>所以Golang在1.11版本中引入了go mod机制，在统一的位置对依赖进行管理。</p>
+<p>go mod不同于以往基于GOPATH和Vendor的构建方式，其主要是通过<strong>GOPATH/pkg/mod</strong>下的缓存包来对工程进行构建。</p>
+<p>对于 Go 1.11 来说，当你工作目录不在 <code>$GOPATH/src</code> 里面，并且工作目录或者工作目录的任意级父目录中含有 <code>go.mod</code> 文件，go 命令行工具会启用模块机制。（但为了兼容以前的机制，当你工作目录是在 <code>$GOPATH/src</code> 里面的时候，go 命令行工具不会启用模块机制，即使工作目录里面有 <code>go.mod</code> 文件也一样。</p>
+<p>go mod 可以通过环境变量GO111MODULE来控制是否启用，GO111MODULE有一下三种取值类型。</p>
+<ul>
+<li>on ：所有的构建，都使用Module机制</li>
+<li>off： 所有的构建，都不使用Module机制，而是使用GOPATH和Vendor</li>
+<li>auto： 在GOPATH下的工程，不使用Module机制，不在GOPATH下的工程使用</li>
+</ul>
+<p>从 Go 1.13 开始，模块机制在所有情况下都将会默认启用。</p>
+<p>本文将覆盖 Go 开发中涉及到模块的一系列常用操作：</p>
+<ul>
+<li>创建一个新的模块</li>
+<li>添加一个依赖项</li>
+<li>升级依赖项</li>
+<li>添加一个拥有更高主版本号的依赖项</li>
+<li>更新当前依赖项到一个新的主版本号</li>
+<li>移除无用的依赖项</li>
+</ul>
+<h3 id="创建一个新的模块"><a href="#创建一个新的模块" class="headerlink" title="创建一个新的模块"></a>创建一个新的模块</h3><p>在 <code>$GOPATH/src</code> <strong>之外</strong>创建一个新的、空白的目录，进入这个目录，并且新建一个源代码文件，<code>hello.go</code>：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\1.png" alt></p>
+<p>再写个测试文件，<code>hello_test.go</code> ：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\2.png" alt></p>
+<p>到目前为止，目录里面包含了一个代码包，但是它还不是一个模块，因为这里面没有 <code>go.mod</code> 文件。如果我们现在的工作目录是 <code>F:\hello&gt;</code> 并且我们运行 <code>go test</code>，我们会看到如下的输出：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\3.png" alt></p>
+<p>最后一行总结了代码包整体的测试结果，因为我们工作目录在 <code>$GOPATH</code> 之外，且又不属于任何模块，所以 Go 命令行工具并不知道当前目录的导入路径是什么，所以只能用目录的路径作为包的名字：<code>_/F_/hello</code>。</p>
+<p>让我们把当前的目录设置成模块的根目录吧，为此我们要用到 <strong><code>go mod init</code></strong> 命令然后再尝试运行 <code>go test</code>：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\4.png" alt></p>
+<p>至此，已经编写并测试了第一个模块！</p>
+<p><code>go mod init</code> 命令创建了一个 <code>go.mod</code> 文件：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\5.png" alt></p>
+<p><code>go.mod</code> 文件只存在于模块的根目录中。<strong>模块子目录的代码包的导入路径等于模块根目录的导入路径（就是前面说的 module path）加上子目录的相对路径</strong>。比如，我们如果创建了一个子目录叫 <code>world</code>，我们不需要（也不会想要）在子目录里面再运行一次 <code>go mod init</code> 了，这个代码包会被认为就是 <code>example.com/hello</code> 模块的一部分，而这个代码包的导入路径就是 <code>example.com/hello/world</code>。</p>
+<h3 id="添加依赖项"><a href="#添加依赖项" class="headerlink" title="添加依赖项"></a>添加依赖项</h3><p>引进 Go 模块系统的主要动机，就是让用户更轻松地使用其他开发者编写的代码（换句话说就是添加一个依赖项）。</p>
+<p>让我们修改一下我们的 <code>hello.go</code> ，让它导入 <code>rsc.io/quote</code> 模块，并用这个模块的接口来实现 <code>Hello</code>：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\6.png" alt></p>
+<p>现在让我们再运行一遍测试：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\7.png" alt></p>
+<p>go 命令行工具会根据 <code>go.mod</code> 里面指定好的依赖的模块版本来下载相应的依赖模块到<strong>GOPATH/pkg/mod</strong>路径下。在你的代码中 import 了一个包，但 <code>go.mod</code> 文件里面又没有指定这个包的时候，go 命令行工具会自动寻找包含这个代码包的模块的最新版本，并添加到 <code>go.mod</code> 中（这里的 “ 最新 “ 指的是：它是最近一次被 tag 的稳定版本（即非预发布版本，non-prerelease），如果没有，则是最近一次被 tag 的预发布版本，如果没有，则是最新的没有被 tag 过的版本）。在我们的例子是，<code>go test</code> 把新导入的 <code>rsc.io/quote</code> 包解析为 <code>rec.io/quote v1.5.2</code> 模块。它还会下载 <code>rsc.io/quote</code> 模块依赖的两个依赖项。即 <code>rsc.io/sampler</code> 和 <code>golang.org/x/text</code>。但是只有直接依赖会记录在 <code>go.mod</code> 文件里面：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\8.png" alt></p>
+<p>第二次运行 <code>go test</code> 命令的时候 Go 命令工具就不再重复上述的工作了，因为 <code>go.mod</code> 已经是更新过了，并且刚才下载下来的模块已经缓存在本地（在 <code>$GOPATH/pkg/mod</code>）目录中：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\9.png" alt></p>
+<p>要注意的是虽然用  Go  命令行工具添加依赖非常的简单快捷，但是它不是没有代价的。你的项目现在有很多关键指标都对新的依赖项有了依赖，比方说代码的正确性、安全性、合适的版权等等，不一而足。</p>
+<p>正如我们上面所见，添加一个直接依赖往往会带来其它间接的依赖。<strong><code>go list -m all</code> </strong>命令会把当前的模块和它所有的依赖项都列出来：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\10.png" alt></p>
+<p>在上述 <code>go list</code> 命令的输出中，当前的模块，又称为主模块 (main module)，永远都在第一行，接着是主模块的依赖项，以依赖项的 module path 排序。</p>
+<p><code>golang.org/x/text</code> 的版本 <code>v0.0.0-20170915032832-14c0d48ead0c</code> 是一个典型的伪版本（pseudo-version） 的例子，它其实就是 Go 命令工具自定义的一个命名规则，当你想要依赖一个模块的某个 commit 版本的代码，但是这个 commit 没有被 tag 过的时候，可以这样子来指定。</p>
+<p>除了 <code>go.mod</code> 之外，go 命令行工具还维护了一个 <code>go.sum</code> 文件，它包含了指定的模块的版本内容的哈希值作为校验参考：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\11.png" alt></p>
+<p>go 命令行工具使用 <code>go.sum</code> 文件来确保你的项目依赖的模块不会发生变化——无论是恶意的，还是意外的，或者是其它的什么原因。<code>go.mod</code> 文件和 <code>go.sum</code> 文件都应该保存到你的代码版本控制系统里面去。</p>
+<h3 id="更新依赖项"><a href="#更新依赖项" class="headerlink" title="更新依赖项"></a>更新依赖项</h3><p>有了 Go 模块机制后，模块的版本通过带有语义化版本号（semantic version）的标签来指定。一个语义化版本号包括三个部分：主版本号（major）、次版本号（minor）、修订号（patch）。举个例子：对于版本 <code>v0.1.2</code>，主版本号是 0，次版本号是 1，修订号是 2。我们先来过一遍更新某个模块的次版本号的流程。在下一节，我们再考虑主版本号的更新。</p>
+<p>从 <code>go list -m all</code> 的输出中，我们可以看到我们在使用的 <code>golang.org/x/text</code> 模块还是以前没有被打过版本号标签的版本。让我们来把它更新到最新的有打过版本号标签的的版本，并测试是否能正常使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">F:\hello&gt;go get golang.org/x/text</span><br><span class="line"></span><br><span class="line">go get golang.org/x/text: unrecognized import path &quot;golang.org/x/text&quot; (https fetch: Get https://golang.org/x/text?go-get=1: dial tcp 216.239.37.1:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.)</span><br><span class="line"></span><br><span class="line">F:\hello&gt;</span><br></pre></td></tr></table></figure>
+<p>当我们调用命令<code>go get golang.org/x/text</code>发现系统报错，解决方案：</p>
+<ol>
+<li>配置下代理，GOPROXY,<a href="https://goproxy.io/" target="_blank" rel="noopener">https://goproxy.io/</a></li>
+<li>参考我的另一篇<a href="https://hxi667.github.io/2019/08/27/go-get-golang-org-x-%E5%8C%85%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">Blog</a>。</li>
+</ol>
+<p>重新执行命令<code>go get golang.org/x/text</code></p>
+<p><img src="C:\Users\xihao\Desktop\hello\12.png" alt></p>
+<p>一切正常!再来看看现在 <code>go list -m all</code> 的输出和 <code>go.mod</code> 文件长什么样子：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\13.png" alt></p>
+<p><code>golang.org/x/text</code> 模块已经被升级到最新的版本（<code>v0.3.2</code>），<code>go.mod</code> 文件里面也把这个模块的版本指定成版本 <code>v0.3.2。注释</code>indirect<code>意味着这个依赖项不是直接被当前模块使用的。而是被模块的其它依赖项使用的。详情请见</code>go help modules`。</p>
+<p>现在让我们来尝试更新 <code>rsc.io/sampler</code> 模块的次版本号。同样操作，先运行 <code>go get</code> 命令，然后跑一遍测试：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\14.png" alt></p>
+<p>测试报错了，这个测试表明 <code>rsc.io/sampler</code> 模块的最新版本跟我们之前的用法不兼容。我们来列举一下这个模块能用的 tag 过的版本：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\15.png" alt></p>
+<p>我们之前用过 <code>v1.3.0</code>，而 <code>v1.99.99</code> 明显不能用了。也许我们能试一下 <code>v1.3.1</code> 版本</p>
+<p><img src="C:\Users\xihao\Desktop\hello\16.png" alt></p>
+<p>请注意我们给 <code>go get</code> 命令的参数后面显式地指定了 <a href="mailto:`@v1.3.1" target="_blank" rel="noopener">`@v1.3.1</a><code>，事实上每个传递给</code>go get<code>的参数都能在后面显式地指定一个版本号，默认情况下这个版本号是</code>@latest`，这代表 Go 命令行工具会尝试下载最新的版本。</p>
+<h3 id="添加一个拥有更高主版本号的依赖项"><a href="#添加一个拥有更高主版本号的依赖项" class="headerlink" title="添加一个拥有更高主版本号的依赖项"></a>添加一个拥有更高主版本号的依赖项</h3><p>我们来为我们的代码包添加一个新的函数，<code>func Proverb</code> 会返回一条关于 Go 并发编程的名言，这可以通过调用 <code>quote.Concurrency</code> 来实现，而这个函数由 <code>rsc.io/quote/v3</code> 模块提供。首先我们要修改我们的 <code>hello.go</code> 来添加新的函数：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\17.png" alt></p>
+<p>然后我们在 <code>hello_test.go</code> 里面添加一个测试函数：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\18.png" alt></p>
+<p>然后我们可以来测试我们的代码了：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\19.png" alt></p>
+<p>请注意我们的模块现在既依赖 <code>rsc.io/quote</code> 也依赖 <code>rsc.io/quote/v3</code>：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\20.png" alt></p>
+<p>不同主版本号的同一个 Go 模块，使用了不同的 module path ——从 <code>v2</code> 开始，module path 的结尾一定要跟上主要版本号。在本例中，<code>v3</code> 版本的 <code>rsc.io/quote</code> 已经不是 <code>rsc.io/quote</code> 了，它的 module path 是 <code>rsc.io/quote/v3</code> 。这个规定被称为 semantic import versioning（语义化的导入版本控制），它给予了不兼容的模块一个不同的名字。反之，<code>v1.6.0</code> 版本的 <code>rsc.io/quote</code> 应该做到能够向下兼容 <code>v1.5.2</code> 版本。所以这两个版本可以共用同一个名字 <code>rsc.io/quote</code>。（在上一节中，<code>v1.99.99</code> 版本的 <code>rsc.io/sampler</code> <em>应该</em>要向下兼容 <code>v1.3.0</code> 版本的 <code>rsc.io/sampler</code>，但是 bug 或者模块使用者对模块的用法不对，这些都有可能会导致错误发生。）</p>
+<p>每一次构建项目，go 命令行工具允许每个 module path 最多只有一个，这就意味着每一个主要版本只有一个：最多一个 <code>rsc.io/quote</code>，最多一个 <code>rsc.io/quote/v2</code>，最多只有一个 <code>rsc.io/quote/v3</code> 等等。这给了模块的作者一个明确的信号：对于同一个 module path，可能会存在有多个重复的模块——一个程序有可能同时使用了 <code>v1.5.2</code> 的 <code>rsc.io/quote</code> 和 <code>v1.6.0</code> 的 <code>rsc.io/quote</code>。还有，允许同一个模块的不同主版本号存在（因为它们的 module path 不一样），能够给模块使用者部分更新主版本的能力。拿这个例子来说，我们想要使用 <code>rsc.io/quote/v3 v3.1.0</code> 模块里面的  <code>quote.Concurrency</code>，但是没准备好要整个代码都迁移到 v3 版本的 <code>rsc.io/quote</code> 中，这种部分迁移的能力，在大型程序或者代码库里面尤其重要。</p>
+<h3 id="更新当前依赖项到一个新的主版本号"><a href="#更新当前依赖项到一个新的主版本号" class="headerlink" title="更新当前依赖项到一个新的主版本号"></a>更新当前依赖项到一个新的主版本号</h3><p>现在让我们把整个项目的 <code>rsc.io/quote</code>  都升级到 <code>rsc.io/quote/v3</code> 吧。因为主版本号改变了，所以我们应该做好心理准备，可能会有些 API 已经被移除、重命名或者被修改成了不兼容的方式。通过阅读文档，我们得知 <code>Hello</code> 已经变成了 <code>HelloV3</code>：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\21.png" alt></p>
+<p>（上面的输出有个 已知的 Bug：显示的 import 路径后面漏了 <code>v3</code>）</p>
+<p>我们可以把 <code>hello.go</code> 中使用 <code>quote.Hello()</code> 的地方改成 <code>quoteV3.HelloV3()</code></p>
+<p><img src="C:\Users\xihao\Desktop\hello\22.png" alt></p>
+<p>然后我们再重新运行一下测试确保一切正常：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\23.png" alt></p>
+<h3 id="移除没有用到的依赖"><a href="#移除没有用到的依赖" class="headerlink" title="移除没有用到的依赖"></a>移除没有用到的依赖</h3><p>我们代码中已经没有用到 <code>rsc.io/quote</code> 的地方了，但是它还是会存在 <code>go list -m all</code> 的输出和 <code>go.mod</code> 文件中：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\24.png" alt></p>
+<p>为什么会这样？因为我们在构建一个代码包的时候（比如说 <code>go build</code> 或者 <code>go test</code>），可以轻易的知道哪些依赖缺失，从而将它自动添加进来，但很难知道哪些依赖可以被安全的移除掉。移除一个依赖项需要在检查完模块中所有代码包和这些代码包的所有可能的编译标签的组合。一个普通的  build 命令不会获得这么多的信息，所以它不能保证安全地移除掉没用的依赖项。</p>
+<p>可以用 <strong>`go mod tidy</strong>` 命令来清除这些没用到的依赖项：</p>
+<p><img src="C:\Users\xihao\Desktop\hello\25.png" alt></p>
+<p>从输出结果看，我们已经清除了<code>rsc.io/quote v1.52</code>这个依赖项。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>Go 的模块功能将会成为未来 Go 的依赖管理系统。在所有支持模块机制的 Go 版本中（即目前的 Go 1.11、Go 1.12），都能正常使用模块系统拥有的所有功能。</p>
+<p>本文介绍了使用 Go 模块过程中的几个工作流程：</p>
+<ul>
+<li><code>go mod init</code> 创建了一个新的模块，初始化 <code>go.mod</code> 文件并且生成相应的描述</li>
+<li><code>go build, go test</code> 和其它构建代码包的命令，会在需要的时候在 <code>go.mod</code> 文件中添加新的依赖项</li>
+<li><code>go list -m all</code> 列出了当前模块所有的依赖项</li>
+<li><code>go get</code> 修改指定依赖项的版本（或者添加一个新的依赖项）</li>
+<li><code>go mod tidy</code> 移除模块中没有用到的依赖项。</li>
+</ul>
+<p>本地开发中使用模块功能，并为你的项目添加 <code>go.mod</code> 和 <code>go.sum</code> 文件，告别GOPATH。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a href="https://github.com/golang/go/wiki/Modules" target="_blank" rel="noopener">Go 1.11 Modules 官方说明文档</a></li>
+<li><a href="https://segmentfault.com/a/1190000016146377" target="_blank" rel="noopener">Go模块简明教程(Go语言依赖包管理工具)</a></li>
+<li><a href="https://blog.csdn.net/benben_2015/article/details/82227338" target="_blank" rel="noopener">Go1.1.1新功能module的介绍及使用</a></li>
+<li><a href="https://www.jianshu.com/p/c666ebdb462b" target="_blank" rel="noopener">go1.12下Go mod使用实践</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Go/" rel="tag"><i class="fa fa-tag"></i> Go</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/27/go-get-golang-org-x-包失败解决方法/" rel="next" title="go get golang.org/x 包失败解决方法 ">
+                <i class="fa fa-chevron-left"></i> go get golang.org/x 包失败解决方法 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">胥三百亿</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hxi667" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-mod简介"><span class="nav-number">1.1.</span> <span class="nav-text">Go mod简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个新的模块"><span class="nav-number">1.2.</span> <span class="nav-text">创建一个新的模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加依赖项"><span class="nav-number">1.3.</span> <span class="nav-text">添加依赖项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新依赖项"><span class="nav-number">1.4.</span> <span class="nav-text">更新依赖项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加一个拥有更高主版本号的依赖项"><span class="nav-number">1.5.</span> <span class="nav-text">添加一个拥有更高主版本号的依赖项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新当前依赖项到一个新的主版本号"><span class="nav-number">1.6.</span> <span class="nav-text">更新当前依赖项到一个新的主版本号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除没有用到的依赖"><span class="nav-number">1.7.</span> <span class="nav-text">移除没有用到的依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-number">1.8.</span> <span class="nav-text">结论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2019/5/29 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">胥三百亿</span>
+
+  
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  总访客:&nbsp&nbsp<span id="busuanzi_value_site_uv"></span>
+</span> &nbsp人 &nbsp | |
+&nbsp&nbsp
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+&nbsp总访问量:&nbsp&nbsp<span id="busuanzi_value_site_pv"></span>
+</span>&nbsp次
+
+<!--
+</div>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v</div>
+
+-->
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div></footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v="></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v="></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
+<script type="text/javascript" src="/js/src/post-details.js?v="></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
