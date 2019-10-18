@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Reading References,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="An Effective LSTM Recurrent Network to DetectArrhythmia on Imbalanced ECG Dataset   在不平衡ECG数据集上检测心律不齐的一个有效LSTM循环网络期刊：Journal of Healthcare Engineering   作者：junli Gao … 日期：Published 13 October 2019   原">
+<meta name="keywords" content="Reading References">
+<meta property="og:type" content="article">
+<meta property="og:title" content="An Effective LSTM Recurrent Network to Detect Arrhythmia on Imbalanced ECG Dataset">
+<meta property="og:url" content="http://yoursite.com/2019/10/18/An-Effective-LSTM-Recurrent-Network-to-Detect-Arrhythmia-on-Imbalanced-ECG-Dataset/index.html">
+<meta property="og:site_name" content="胥三百亿">
+<meta property="og:description" content="An Effective LSTM Recurrent Network to DetectArrhythmia on Imbalanced ECG Dataset   在不平衡ECG数据集上检测心律不齐的一个有效LSTM循环网络期刊：Journal of Healthcare Engineering   作者：junli Gao … 日期：Published 13 October 2019   原">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-18T06:23:18.520Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="An Effective LSTM Recurrent Network to Detect Arrhythmia on Imbalanced ECG Dataset">
+<meta name="twitter:description" content="An Effective LSTM Recurrent Network to DetectArrhythmia on Imbalanced ECG Dataset   在不平衡ECG数据集上检测心律不齐的一个有效LSTM循环网络期刊：Journal of Healthcare Engineering   作者：junli Gao … 日期：Published 13 October 2019   原">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/18/An-Effective-LSTM-Recurrent-Network-to-Detect-Arrhythmia-on-Imbalanced-ECG-Dataset/">
+
+
+
+
+
+  <title>An Effective LSTM Recurrent Network to Detect Arrhythmia on Imbalanced ECG Dataset | 胥三百亿</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">胥三百亿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/An-Effective-LSTM-Recurrent-Network-to-Detect-Arrhythmia-on-Imbalanced-ECG-Dataset/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="胥三百亿">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="胥三百亿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">An Effective LSTM Recurrent Network to Detect Arrhythmia on Imbalanced ECG Dataset</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-18T10:53:43+08:00">
+                2019-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>&nbsp阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  23
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><strong>An Effective LSTM Recurrent Network to Detect<br>Arrhythmia on Imbalanced ECG Dataset
+</strong></center>
+
+<p><center>在不平衡ECG数据集上检测心律不齐的一个有效LSTM循环网络</center><br>期刊：Journal of Healthcare Engineering  </p>
+<p>作者：junli Gao …</p>
+<p>日期：Published 13 October 2019  </p>
+<p>原文链接：</p>
+<a id="more"></a>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>​        为了降低心血管疾病（CVD）的高死亡率，心电图（ECG）在计算机辅助心律失常诊断系统中起着重要作用。但是，ECG的复杂变化和不平衡使得这成为一个具有挑战性的问题。由于心电图数据存在严重不平衡，因此提出了一种有效的具有focal loss（FL）的长期短期记忆（LSTM）循环网络模型。为此，<strong><font color="#dd0000">         LSTM网络可以消除复杂ECG信号中的时序特征，而FL用于通过降低容易识别的正常ECG样本的权重来解决类别不平衡问题  </font></strong> 。MIT-BIH心律失常数据库中已验证了所建议网络的优势。实验结果表明，带有FL的LSTM网络可以很好地解决ECG分类中数据集不平衡的问题，<strong><font color="#dd0000">并且对ECG信号的质量不敏感</font></strong> 。所提出的方法可以部署在远程医疗场景中，以帮助心脏病医生更准确和客观地诊断ECG信号。  </p>
+<h1 id="一，介绍"><a href="#一，介绍" class="headerlink" title="一，介绍"></a>一，介绍</h1><p>​        心血管疾病（CVD）是全世界死亡的主要原因[1]。根据世界卫生组织的数据，2016年约有1790万人死于心血管疾病，占所有死亡人数的31％。心律失常是由不当的心脏内传导或脉冲形成引起的，可影响心脏形状或破坏心率[2]。心电图（ECG）是人心脏电信号活动的全面体现。通过收集信号来获取心脏各个部位的详细生理状态是临床客观诊断必不可少的手段。基于心电图数据的自动分析和诊断对于心律不齐具有可靠的临床诊断参考价值[3]。</p>
+<p>​    已经提出了许多自动分类心电图的方法。心电图的类别可以通过时域[4]，小波变换[5]，遗传算法[6]，支持向量机（SVM）[7]，贝叶斯[8]或其他方法来区分。尽管上述分类方法在实验数据集上具有很高的准确性，但是其性能高度依赖于设计方法所提取的特征。手动设计提取的特征可能会增加整个过程的计算复杂性，尤其是在变换域中。</p>
+<p>​    深度学习构成了机器学习和模式识别的主流。它提供了一种结构，其中特征提取和分类一起执行[9]。深度学习已广泛应用于许多领域，例如图像分类[10]，目标检测[11]和疾病预测[12]。它也有效地用于分析生物生理信号[13-17]。 Acharya等[13]提出了一种九层卷积神经网络（CNN）来自动识别五种心电图类型。 <strong><font color="#dd0000">Yildirim等人[15]设计了一种用于心律失常检测的端到端一维卷积神经网络（1D-CNN）模型</font></strong>。 Hannun等人[16]开发了深度神经网络（DNN）以检测12种心律ECG。Oh等人[17]使用U-Net自动编码器检测五个心律不齐。 <strong><font color="#dd0000">CNN通过其独特的权重共享机制输入的是空间变化</font></strong>，即以图像为典型示例的空间数据表现良好。但是，<font color="#dd0000"><strong>循环神经网络（RNN）更适合样本序列出现的时间顺序变化</strong></font>。</p>
+<p>​    长短期记忆（LSTM）网络是RNN的一种特殊类型，广泛用于时间序列分析。它可以有效地保留历史信息，实现对文本的长期依赖信息的学习。它已被用于许多领域，例如自然语言处理[18]和语音识别[19]。 LSTM还用于检测ECG心律不齐[20-23]。 Yildirim [20]提出了一种基于深度双向LSTM网络（BLSTM）的小波序列（WS）来分类心电图（ECG）信号的新模型。<strong><font color="#dd0000">Oh等人[22]提出了一种使用CNN和LSTM的组合网络模型进行ECG心律失常诊断</font></strong>。Hou等人[23]介绍了一种基于深度学习的新算法，该算法将LSTM与SVM结合在一起用于ECG心律失常分类。</p>
+<p>​    <strong><font color="#dd0000">ECG数据集的不平衡是准确分类ECG的另一个挑战。训练过程中存在两个问题</font></strong>：（1）训练效率低，因为正常的心电图在数据集中所占比例很大，容易产生负面影响;（2）当正常的心电图使训练不堪重负时，模型退化。一些研究人员试图在诊断心律不齐时解决心电图数据的不平衡问题。 Sanabila等人[24]使用生成的过采样方法（GenOMe）解决了不平衡的心律不齐的问题，该方法生成了以特定分布（β，γ和高斯）为约束的新数据点。 Rajesh和Dhuli [25]在提取的特征集上采用了三种数据级别的预处理技术来平衡ECG的分布。这些是随机过采样和欠采样（ROU），具有随机欠采样的少数合成过采样技术（SMOTE + RU）和基于分布的平衡（DBB）。作为对输入的ECG数据或特征集进行重采样的替代方法，focal loss通过降低简单的正常ECG样本的权重来解决不平衡的数据集分类，即使它们的数量很大，其对损失的贡献也很小，也就是说，focal loss集中了网络对困难的心电图心跳类型进行训练，这可能只占数据集的一小部分。</p>
+<p>​    受FL解决分类类别不平衡问题和LSTM技术的启发，提出了一种有效的LSTM与FL来处理MIT-BIH心律失常数据库中的ECG数据不平衡问题。 LSTM自动提取复杂ECG信号的时序特征，而FL缓解了LSTM网络面临的ECG类别分配不平衡的问题，使网络能够有效地训练所有类别。实验结果表明，所提出的模型在不平衡的心电图数据上达到了最先进的性能，并且优于先前的结果。此外，<strong><font color="#dd0000">我们在去噪和未去噪的ECG数据集上进行了实验，结果表明所提出的模型对ECG信号的质量不敏感</font></strong>。</p>
+<h1 id="二、方法"><a href="#二、方法" class="headerlink" title="二、方法"></a>二、方法</h1><p>​        使用深度学习进行心律失常分类通常包括两个基本阶段：预处理和分类。<strong><font color="#dd0000">在预处理阶段，使用Daubechies 6（db6）离散小波变换从ECG信号中去除噪声。然后使用滑动窗口搜索方法提取ECG心跳，并使用Z-score对数据进行归一化</font></strong>。LSTM网络用于ECG心跳分类。以下各节将讨论这些方法的详细信息和理论背景。  </p>
+<h2 id="2-1预处理"><a href="#2-1预处理" class="headerlink" title="2.1预处理"></a>2.1预处理</h2><p>​         预处理包括ECG信号的去噪和分割。  </p>
+<h3 id="2-1-1去噪"><a href="#2-1-1去噪" class="headerlink" title="2.1.1去噪"></a>2.1.1去噪</h3><p>​         我们使用Daubechies 6（db6）离散小波变换对原始数据进行去噪[26]，然后将经过去噪的ECG信号输入到LSTM网络中。原始和去噪的ECG信号如图1所示。</p>
+<p><img src alt>      </p>
+<h3 id="2-12-ECG心拍分割"><a href="#2-12-ECG心拍分割" class="headerlink" title="2.12 ECG心拍分割"></a>2.12 ECG心拍分割</h3><p>​        我们在样本图提取中使用了滑动窗口搜索方法（参见图2）。MIT-BIH心律失常数据库为由独立专家验证的ECG类别信息提供了注释。由于R-peak检测算法可实现99％以上的特异性和灵敏度[27-29]，因此我们直接使用R-peak注释文件。<font color="#dd0000">将所有ECG信号分段为250个样本长的序列，并以带注释的R峰为中心。请注意，默认情况下，我们使用的ECG心拍的长度为250点<font>，但是对于其大小没有统一的标准。    </font></font></p>
+<p><img src alt></p>
+<h2 id="2-2方法"><a href="#2-2方法" class="headerlink" title="2.2方法"></a>2.2方法</h2><h3 id="2-21问题描述"><a href="#2-21问题描述" class="headerlink" title="2.21问题描述"></a>2.21问题描述</h3><p>​         为了实现心律不齐的检测，将softmax回归模型用作LSTM网络结构的最后一层。对于输入的训练集，R={(x(1),y(1))…,(x(i),y(i))…,(x(n),y(m)},n是包含分类标签的ECG节拍的数量。y(i) ∈ {0, 1, 2, 3, 4, 5, 6, 7}是x(i)的种类标签，0, 1, 2, 3, 4, 5, 6, 和7分别代表了N,LBBB, RBBB, APC, NESC, ABERR, NPC, 和AESC八种疾病。如果y=0,那么x(i)代表了N(正常)；否则x(i)就是一个心率不齐的类型。对于一个ECG样本x(i)，通过LSTM网络后的输出是z(i),表示为：</p>
+<p><img src alt></p>
+<p>其中g(·)是被描述为一个ECG样本从输入层到最后的全连接层的处理函数，θ为LSTM网络相关的参数。</p>
+<p>​    全连接层的最后输出向量Z(i)是LSTM网络提取的ECG信号特征。它被喂给softmax层，该层计算每个ECG样本所欲哪一类别的概率。公式（2）是网络中使用的softmax函数：</p>
+<p><img src alt></p>
+<p>其中C是ECG节拍类型的数量，y(i) 是LSTM网络对输入的特征向量z(i)的可能的分类类别。</p>
+<h3 id="2-2-2-LSTM循环网络"><a href="#2-2-2-LSTM循环网络" class="headerlink" title="2.2.2 LSTM循环网络"></a>2.2.2 LSTM循环网络</h3><p>​         长短期记忆（LSTM）是一个时间循环神经网络。它适用于重要事件的时间序列预测，并且延迟间隔相对较长[30]。神经网络可以有效地保留历史信息并实现对文本的长期依赖信息的学习。 LSTM网络由输入门，忘记门，输出门和细胞单元组成，以更新和保留历史信息。图3显示了一个LSTM模块。  </p>
+<p><img src alt></p>
+<p>​        LSTM记忆模块中的忘记门ft由简单的单个神经元控制。它确定必须保留或丢弃哪些信息才能保留历史信息。输入门it是通过神经元和先前的记忆单元影响后被LSTM模块创建的部分。它被激活以确定是否将历史信息更新到LSTM块中。候选更新内容cin由tanh神经元计算。根据当前候选单元Cin，先前时间状态Ct-1，输入门信息It和遗忘门信息ft计算出当前时间记忆单元的状态值Ct. 当前时间LSTM模块的ot是在输出门处生成的。最后，at绝定将要输出的当前单元状态的信息量。每个门的激活和当前单元状态的更新可以通过如下公式计算：</p>
+<p><img src alt></p>
+<p>​        在为每个位置计算隐藏向量之后，我们将最后一个隐藏向量作为ECG信号的表示。我们将其喂到具有分类的数量长度的线性层，并添加了softmax输出层以将ECG样本分类为N，LBBB，RBBB，APC，NESC，ABERR，NPC或AESC。</p>
+<p>​        在本文中，我们使用四层LSTM体系结构，包括输入层，LSTM层和两个全连接层。针对不平衡ECG信号特征提取和分类任务提出的LSTM的结构如图4所示。</p>
+<p><img src alt></p>
+<h3 id="2-23对不平衡ECG数据Focal-Loss"><a href="#2-23对不平衡ECG数据Focal-Loss" class="headerlink" title="2.23对不平衡ECG数据Focal Loss"></a>2.23对不平衡ECG数据Focal Loss</h3><p>​        Focal Loss是解决数据集不平衡问题的更有效方法。它是通过变换交叉熵（CE）损失函数获得的。 CE的计算公式为</p>
+<p><img src alt></p>
+<p>​         Focal Loss [31]是动态缩放的CE，其中缩放因子随着分类的置信度增加而衰减为零。直观地，此缩放因子可以在训练过程中自动降低正常ECG样本的贡献，而模型训练则将注意力集中在困难的样本上。 FL可以通过： </p>
+<p><img src alt> </p>
+<p>​        其中，(1 – y)v为调节因子，v为聚焦参数。调节因子的目的是减少易于分类的ECG样本的权重，从而使模型在训练期间更着重聚焦在难以分类的ECG样本中，当ECG分类错误且y很小时，调节因子的值接近1，损失几乎没有受到影响，损失值使用FL根据图5的框图进行计算。</p>
+<p><img src alt></p>
+<p>​        网络参数的优化很重要，梯度下降优化算法有很多种，例如Adagrad，Adadelta，Adam和Nadam，本文使用的是Nadam算法。这是一种有效的梯度下降优化算法，结合了Adam和NAG算法来计算不同参数的自适应学习率。总的来说，在实际应用中，Nadam的性能优于其他梯度下降优化方法[32]。</p>
+<h1 id="三、实验和结果"><a href="#三、实验和结果" class="headerlink" title="三、实验和结果"></a>三、实验和结果</h1><h2 id="3-1实验设置"><a href="#3-1实验设置" class="headerlink" title="3.1实验设置"></a>3.1实验设置</h2><p>​        本研究中提出的LSTM网络在Microsoft Windows 10 64位操作系统上的深度学习框架Tensorflow 1.12.0上运行。该计算机服务器配置有8 GB的Intel（8）Core（TM）i5-7000处理器。考虑到分类结果的有效性，我们将迭代轮数设置为350。使用FL（y = 2）的LSTM网络在训练和验证过程中的损失曲线和准确性曲线如图6所示。观察图6的曲线，经过350轮迭代后，网络收敛了，总体分类准确度保持稳定。在一个迭代周期内训练模型所需的平均时间约为191s。请注意，此迭代周期设置仅用于更容易评估其他学习参数对网络分类结果的影响，并不能保证是LSTM网络的最佳配置。</p>
+<p><img src alt></p>
+<h2 id="3-2原材料"><a href="#3-2原材料" class="headerlink" title="3.2原材料"></a>3.2原材料</h2><p>​        我们使用了麻省理工学院提供的MIT-BII心律失常数据库[33]。该数据库来自47位临床患者，包含48条带注释的ECG记录。每组大约30分钟长，并通过0.1-100 Hz带通滤波器以360 Hz的速率进行采样，总共约650,000个采样点。</p>
+<p>​        来自16个心跳类别的超过109,000个标记节拍。所有心跳均由两名或以上心脏病专家标记。正常类别的数据量最大，而数据最少的类别是室上性早搏（只有两个样本）。这项研究使用了八种ECG心拍类型：N，LBBB，RBBB，APC，NESC，ABERR，NPC和AESC。表1列出了这些节拍类型及其统计信息。</p>
+<p><img src alt></p>
+<p>​        从表1中可以看出，正常和异常心电图之间存在严重的不平衡。由于心电图数据不平衡，<strong><font color="#dd0000">网络模型倾向于学习主要心电图节律数据的分布，而对少数心电图节律数据的学习不足</font></strong>，因此我们经常关注较少的异常心电图节律类别。</p>
+<p>​        数据集共有93,371个ECG样本。我们使用所有ECG数据的10％作为测试集。在其余的ECG数据中，将90％的数据用作训练集，将10％的数据用作验证集。训练集和验证集用于调整参数并确定设计模型的最佳层数参数数量。使用以前未使用过的测试集评估模型性能。</p>
+<h2 id="3-3评估指标"><a href="#3-3评估指标" class="headerlink" title="3.3评估指标"></a>3.3评估指标</h2><p>​        我们使用五个指标来评估所提议网络的性能：准确性ACC，召回率RE，精确度PR，特异性SP和Fl得分。准确度是正确分类的ECG样本在所有ECG样本中所占的比例，它反映了测试结果与实际结果之间的一致性。但是，在不平衡数据集上评估分类器的性能时，召回率，准确性和特异性偏少。 <strong><font color="#dd0000">Fl得分是精确度，召回率平均值的二倍</font></strong>。可以按以下方式计算五个评估指标：</p>
+<p><img src alt></p>
+<p>​        本研究中的分类类别不是二分类，因此我们使用混淆矩阵来表示为分类测试构建的TP，FP，TN和FN。混淆矩阵使生成上述四个指标变得容易。  </p>
+<h2 id="3-4-网络参数配置"><a href="#3-4-网络参数配置" class="headerlink" title="3.4.网络参数配置"></a>3.4.网络参数配置</h2><p>​        为了获得我们建议的LSTM网络的最佳学习参数，我们定量分析了不同学习参数对实验结果的影响。通过评估测试集上多个案例分类准确性的实验结果，可以确定最佳参数值。</p>
+<p>​        经过350个迭代轮数后，LSTM网络收敛并且分类精度稳定。表2中显示了用于获得最佳分类精度的LSTM网络参数的设置</p>
+<p><img src alt></p>
+<p>​        在此实验中，我们分析了各种学习参数对提议的带有FL的LSTM网络的分类性能的影响。主要的网络参数包括dropout，batch size和FL的v参数。</p>
+<p>​        我们针对所提出的网络以不同的dropout评估了不同的dropout下模型的好坏。其他学习参数设置采用表2中的默认值。表3显示了在350个Epoch后具有不同dropout的测试集的分类准确性。</p>
+<p><img src alt></p>
+<p>​        通过比较表3的结果，我们可以看到，通过增加dropout并不能改善我们提出的LSTM网络的性能。因此，LSTM网络结构的最佳dropout约为零。</p>
+<pre><code>然后，我们研究了更改batch size的初始设置对LSTM网络性能的影响，我们评估了五种不同batch size的性能，如表4所示。
+</code></pre><p><img src alt></p>
+<p>​        根据表4的结果，<strong><font color="#dd0000">增加或减少batch size并不一定会改善我们建议的LSTM网络的性能。较大的batch size可以更准确地估计梯度，但容易过度拟合。小batch size具有标准化效果，但是存在效率低下的风险</font></strong>，并且不可能提前停止或不匹配该策略。对于本文使用的数据集和网络结构，最佳批大小为128。</p>
+<p>​        v参数是FL的最关键参数。本文研究了改变v参数对我们提出的LSTM网络性能的影响。心电图异常节拍对损失分布的影响很小。但是，对于正常节拍，增加参数v的值会大大减少正确分类的正常节拍的损失，从而使模型可以专注于错误分类的异常ECG节拍。在350个Epoch之后，计算了与测试数据集相关的分类精度，并在表5中给出了六个v值。其他学习参数与表2相同</p>
+<p><img src alt></p>
+<p>​       从表5所示的结果中，我们可以看到，增大或减小v并不能改善带FL的LSTM网络的性能。对于建议的网络，最佳v参数值为2。  </p>
+<h1 id="四、结果与讨论"><a href="#四、结果与讨论" class="headerlink" title="四、结果与讨论"></a>四、结果与讨论</h1><p>​        在这项研究中，我们提出了一种LSTM网络结构，以实现ECG分类不平衡的任务。心电图心跳数据通过LSTM网络进行分类，然后，我们使用FL训练了LSTM网络。通过设置变换交叉熵CE为基准，证明了使用FL对不平衡的ECG心拍进行分类的可行性。通过与最新方法进行比较，我们验证了LSTM网络结构的有效性。</p>
+<p>​        使用混淆矩阵评估模型的性能指标。 LSTM网络的代价函数使用变换交叉熵CE来计算测试集上的混淆矩阵，如图7（a）所示。混淆矩阵中的对角线值代表ECG样本的正确分类。其他LSTM网络结构参数（v除外）与表2相同。LSTM网络的代价函数使用FL在测试集上计算混淆矩阵，如图7（b）所示。其他LSTM网络参数与表2相同。</p>
+<p><img src alt></p>
+<p>​        通过比较和分析图7中的LSTM网络与CE和LSTM网络与FL的混淆矩阵，我们可以看到，具有FL的LSTM网络在不平衡的ECG数据集上比具有CE的LSTM网络表现更好。在检查了FL后，发现LSTM网络在大多数类别具有更好的识别性能。检查CE，LSTM网络似乎在大多数类别中提供较低的识别性能。同样，对于CE，41个APC心拍被错误分类为N类心拍，而对于FL（v = 2），则32个APC心拍被错误分类为N类心拍。这是因为两个心拍的形状没有很大差异，但是存在特定的，难以定位的波动异常（例如，PR段被扩展）。表6显示了测试集上带有CE的LSTM网络和带有FL的LSTM网络的PR，RE，SP和Fl。</p>
+<p><img src alt></p>
+<p>​        通过比较表6中的结果，可以在不平衡的ECG数据上验证具有FL的LSTM网络的有效性。从该表可以看出，具有FL（v = 2）的LSTM网络ACC为99.26％，RE为99.26％，PR为99.30％，SP为99.14％和Fl得分为99.27。具有CE的LSTM网络达到了98.70％的ACC，98.70％的RE，98.05％的PR，99.85％的SP和98.36％的Fl得分。<strong><font color="#dd0000">尽管与带CE的LSTM网络相比，带FL的LSTM网络的性能提升似乎并不大，但在实际诊断中，即使是很小的精度提高也可以为人类健康和生命带来巨大价值</font></strong>。</p>
+<p>​        为了更直观地比较上述两种方法（CE和FL）的有效性，我们接下来使用精确召回曲线（PR曲线）分析结果。对于类别不平衡问题，PR曲线被认为优于受试者工作特征曲线 / 接收器操作特性曲线（ROC曲线）[34]。如图8所示，对于不平衡心电图数据的输入，分别使用CE（如图8（a）所示）和FL（如图8（b）所示）从分类结果中绘制出每个类别的PR曲线。与CE相比，当本文提出的LSTM网络使用FL时，大多数类别在PR曲线（AUC）下获得相对较高的面积。因此，我们提出的带有FL的LSTM网络可有效解决类别不平衡ECG数据集。</p>
+<p><img src alt></p>
+<p>​        为了<font color="#dd0000"><strong>验证所提出的带FL的LSTM网络在嘈杂环境中的鲁棒性</strong></font>，还对该网络进行了无噪声分析，结果列于表7中。表7中的性能测量表明，带FL（v 2）的LSTM网络获得的分类结果接近于去噪ECG记录的结果。它显示了去噪网络的优势，也说明了网络的鲁棒性。  </p>
+<p><img src alt></p>
+<p>​        <strong><font color="#dd0000">本文提议的网络可以部署在远程医疗场景中</font></strong>。通过可穿戴设备收集心脏病患者的ECG数据，并通过Internet传输到云中。通过本研究中提议的模型进行数据分析，以帮助心脏病医生更准确，更客观地进行诊断心电图信号。</p>
+<p>​        该模型主要在MIT-BIH心律失常数据库中进行研究。根据AAMI标准（ANSI / AAMI EC57：1998），<strong><font color="#dd0000">MIT-BIH心律失常数据库中的所有心律都分为五个主要类别，但这并不总是可取的</font></strong>。心律失常的类型可以通过特定的ECG心拍和心拍类型的规律性来判断。当患者有潜在的结构性心脏问题时，重复的APC心拍可能会导致危险的心律失常，例如心房颤动。束状分支阻滞阻碍了电脉冲通过传导系统到达心室的正常路径。这会导致心室异步收缩和心脏功能恶化，从而可能危及生命。</p>
+<p>​        <strong><font color="#dd0000">为了评估所提议网络的性能，我们将其与文献中的一些最新方法进行了比较</font></strong>。我们在表8中使用MIT-BIH心律失常数据库记录了提出的网络模型（以粗体显示）的性能以及心电图心跳分类的最新代表性技术。</p>
+<p><img src alt></p>
+<p>​        从表8中可以明显看出，我们提出的带有FL的LSTM网络实现了良好的性能。我们的研究与文献中的其他研究之间的区别在于，我们使用深度学习对类别不平衡的ECG样本数据进行分类。为了分类不平衡的ECG心律失常数据，我们提出了一个带有FL的LSTM网络。<strong><font color="#dd0000">文献中也有关于不平衡心电图数据分类的研究[24,25]</font></strong>。主要区别在于我们的研究使用FL修改了损失函数，这使得LSTM网络更加专注于易于分类错误的心电图异常心拍的特征学习，并提高了心律失常分类的准确性。关于RE，我们提出的带有FL的LSTM网络在测试设备上取得了最佳结果。这意味着它具有较少数量的假阴性，即异常的ECG心拍被错误地分类为正常ECG心拍。此外，<font color="#dd0000"><strong>该方法避免了由欠采样方法引起的有效信息减少的问题或由过采样方法引起的网络训练时间增加的问题</strong></font>。</p>
+<p>​        我们提出的网络的重点如下：</p>
+<p>​            （i）不需要特征提取和选择技术</p>
+<p>​            （i i）我们的重要发现是，该方法可以提高心律失常类别的分类准确率</p>
+<p>​            （ii i）我们提出的方法在没有去噪心电图记录的情况下是可靠的</p>
+<pre><code>我们提出的网络的缺点是如下：
+</code></pre><p>​            （i）本研究仅针对八种心电图心跳类型进行</p>
+<p>​            （ii）提出的网络的训练时间代价高</p>
+<h1 id="五、结论与未来工作"><a href="#五、结论与未来工作" class="headerlink" title="五、结论与未来工作"></a>五、结论与未来工作</h1><p>​        在这项研究中，我们提出了一种带有FL的LSTM网络，以通过抑制大量简单的正常ECG心拍数据对模型训练的影响来提高训练效果。结果表明，具有FL的LSTM网络的准确性，召回率，精确度，特异性和F1得分分别为99.26％，99.26％，99.30％，99.14％和99.27％。<strong><font color="#dd0000"> MIT-BIH心律失常数据库的实验结果证明了所提出网络的有效性和鲁棒性</font></strong>。所提出的方法可以部署在远程医疗场景中，以帮助心脏病医生更准确和客观地诊断ECG信号。</p>
+<p>​        该研究仅针对八种心电图心拍类型。为了推广结果，将来的研究中应结合各种类型和大量节拍。并且，我们还计划向ECG信号添加不同级别的噪声，以讨论带有FL的LSTM模型的性能。</p>
+<h2 id="资料可用性"><a href="#资料可用性" class="headerlink" title="资料可用性"></a>资料可用性</h2><p>​        这篇文章中包含了用于支持本研究结果的数据。更多数据可向相应的作者索取。</p>
+<h2 id="利益冲突"><a href="#利益冲突" class="headerlink" title="利益冲突"></a>利益冲突</h2><p>​        作者宣称没有利益冲突。</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>​        这项研究得到了云计算的集成和云计算与大数据的大集成，科教创新（批准号：2017A11017），CERNET创新项目（批准号：NGII20161202），关键研究，开发和支持的部分支持。河南省人民科学技术推广计划（批准号182207310002），新疆生产建设兵团重点科技攻关计划（批准号2018AB017）。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>见源文件</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Reading-References/" rel="tag"><i class="fa fa-tag"></i> Reading References</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/16/One-Day-One-More/" rel="next" title="One Day One More">
+                <i class="fa fa-chevron-left"></i> One Day One More
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">胥三百亿</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hxi667" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一，介绍"><span class="nav-number">2.</span> <span class="nav-text">一，介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、方法"><span class="nav-number">3.</span> <span class="nav-text">二、方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1预处理"><span class="nav-number">3.1.</span> <span class="nav-text">2.1预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1去噪"><span class="nav-number">3.1.1.</span> <span class="nav-text">2.1.1去噪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-12-ECG心拍分割"><span class="nav-number">3.1.2.</span> <span class="nav-text">2.12 ECG心拍分割</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2方法"><span class="nav-number">3.2.</span> <span class="nav-text">2.2方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-21问题描述"><span class="nav-number">3.2.1.</span> <span class="nav-text">2.21问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-LSTM循环网络"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.2.2 LSTM循环网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-23对不平衡ECG数据Focal-Loss"><span class="nav-number">3.2.3.</span> <span class="nav-text">2.23对不平衡ECG数据Focal Loss</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、实验和结果"><span class="nav-number">4.</span> <span class="nav-text">三、实验和结果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1实验设置"><span class="nav-number">4.1.</span> <span class="nav-text">3.1实验设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2原材料"><span class="nav-number">4.2.</span> <span class="nav-text">3.2原材料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3评估指标"><span class="nav-number">4.3.</span> <span class="nav-text">3.3评估指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-网络参数配置"><span class="nav-number">4.4.</span> <span class="nav-text">3.4.网络参数配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、结果与讨论"><span class="nav-number">5.</span> <span class="nav-text">四、结果与讨论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、结论与未来工作"><span class="nav-number">6.</span> <span class="nav-text">五、结论与未来工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#资料可用性"><span class="nav-number">6.1.</span> <span class="nav-text">资料可用性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利益冲突"><span class="nav-number">6.2.</span> <span class="nav-text">利益冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#致谢"><span class="nav-number">6.3.</span> <span class="nav-text">致谢</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2019/5/29 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">胥三百亿</span>
+
+  
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  总访客:&nbsp&nbsp<span id="busuanzi_value_site_uv"></span>
+</span> &nbsp人 &nbsp | |
+&nbsp&nbsp
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+&nbsp总访问量:&nbsp&nbsp<span id="busuanzi_value_site_pv"></span>
+</span>&nbsp次
+
+<!--
+</div>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v</div>
+
+-->
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div></footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v="></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v="></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
+<script type="text/javascript" src="/js/src/post-details.js?v="></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
