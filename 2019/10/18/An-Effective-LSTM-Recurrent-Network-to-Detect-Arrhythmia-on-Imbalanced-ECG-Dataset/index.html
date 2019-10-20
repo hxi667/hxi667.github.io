@@ -109,7 +109,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/10/18/An-Effective-LSTM-Recurrent-Network-to-Detect-Arrhythmia-on-Imbalanced-ECG-Dataset/20.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/10/18/An-Effective-LSTM-Recurrent-Network-to-Detect-Arrhythmia-on-Imbalanced-ECG-Dataset/21.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/10/18/An-Effective-LSTM-Recurrent-Network-to-Detect-Arrhythmia-on-Imbalanced-ECG-Dataset/21.png">
-<meta property="og:updated_time" content="2019-10-18T09:15:43.687Z">
+<meta property="og:updated_time" content="2019-10-18T11:10:48.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="An Effective LSTM Recurrent Network to Detect Arrhythmia on Imbalanced ECG Dataset">
 <meta name="twitter:description" content="An Effective LSTM Recurrent Network to DetectArrhythmia on Imbalanced ECG Dataset   在不平衡ECG数据集上检测心律不齐的一个有效LSTM循环网络期刊：Journal of Healthcare Engineering   作者：junli Gao … 日期：Published 13 October 2019   原">
@@ -404,7 +404,7 @@
 <p>​        在本文中，我们使用四层LSTM体系结构，包括输入层，LSTM层和两个全连接层。针对不平衡ECG信号特征提取和分类任务提出的LSTM的结构如图4所示。</p>
 <p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/10/18/An-Effective-LSTM-Recurrent-Network-to-Detect-Arrhythmia-on-Imbalanced-ECG-Dataset/7.png" alt></p>
 <h3 id="2-23对不平衡ECG数据Focal-Loss"><a href="#2-23对不平衡ECG数据Focal-Loss" class="headerlink" title="2.23对不平衡ECG数据Focal Loss"></a>2.23对不平衡ECG数据Focal Loss</h3><p>​        Focal Loss是解决数据集不平衡问题的更有效方法。它是通过变换交叉熵（CE）损失函数获得的。 CE的计算公式为</p>
-<p><img src="![8.png](https://github.com/hxi667/hxi667.github.io/blob/master/2019/10/18/An-Effective-LSTM-Recurrent-Network-to-Detect-Arrhythmia-on-Imbalanced-ECG-Dataset/8.png?raw=true" alt> )</p>
+<p><img src="![8.png](https://github.com/hxi667/hxi667.github.io/blob/master/2019/10/18/An-Effective-LSTM-Recurrent-Network-to-Detect-Arrhythmia-on-Imbalanced-ECG-Dataset/8.png?raw=true" alt></p>
 <p>​         Focal Loss [31]是动态缩放的CE，其中缩放因子随着分类的置信度增加而衰减为零。直观地，此缩放因子可以在训练过程中自动降低正常ECG样本的贡献，而模型训练则将注意力集中在困难的样本上。 FL可以通过： </p>
 <p><img src="https://raw.githubusercontent.com/hxi667/hxi667.github.io/master/2019/10/18/An-Effective-LSTM-Recurrent-Network-to-Detect-Arrhythmia-on-Imbalanced-ECG-Dataset/9.png" alt> </p>
 <p>​        其中，(1 – y)v为调节因子，v为聚焦参数。调节因子的目的是减少易于分类的ECG样本的权重，从而使模型在训练期间更着重聚焦在难以分类的ECG样本中，当ECG分类错误且y很小时，调节因子的值接近1，损失几乎没有受到影响，损失值使用FL根据图5的框图进行计算。</p>
@@ -501,6 +501,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/10/20/Automated-diagnosis-of-arrhythmia-using-combination-of-CNN-and-LSTMtechniques-with-variable-length-heart-beats/" rel="prev" title="Automated_diagnosis_of_arrhythmia_using_combination_of_CNN_and_LSTMtechniques_with_variable_length_heart_beats">
+                Automated_diagnosis_of_arrhythmia_using_combination_of_CNN_and_LSTMtechniques_with_variable_length_heart_beats <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -576,7 +580,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
