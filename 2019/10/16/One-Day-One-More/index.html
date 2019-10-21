@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="基于 BiLSTM- Attention 神经网络的8导联ECG时序数据分类的可解释性分析    摘要心血管疾病具有危急值属性，通过筛查第一时间发现心电危急值具有重要意义。利用 BiLSTM-Attention模型结合8导联ECG数据的节律和空间特征，可以有效地提高特定疾病分类的准确性。首先，利用连续小波变换去除ECG噪声。其次，通过检测R波的峰值位置，提取连续的RR间期。最后，在中国心血管疾病数">
+<meta name="description" content="基于 CNN-BiLSTM 神经网络的8导联ECG时序数据分类的可解释性分析  摘要　　心血管疾病具有危急值属性，通过筛查第一时间发现心电危急值具有重要意义。利用 CNN-BiLSTM模型结合8导联ECG数据的时间特性和空间特征，可以有效地提高特定疾病分类的准确性。首先，利用连续小波变换去除ECG噪声。其次，通过检测R波的峰值位置，提取连续的RR间期。最后，在中国心血管疾病数据库（Chinese">
 <meta name="keywords" content="One Day One More">
 <meta property="og:type" content="article">
 <meta property="og:title" content="One Day One More">
 <meta property="og:url" content="http://yoursite.com/2019/10/16/One-Day-One-More/index.html">
 <meta property="og:site_name" content="胥三百亿">
-<meta property="og:description" content="基于 BiLSTM- Attention 神经网络的8导联ECG时序数据分类的可解释性分析    摘要心血管疾病具有危急值属性，通过筛查第一时间发现心电危急值具有重要意义。利用 BiLSTM-Attention模型结合8导联ECG数据的节律和空间特征，可以有效地提高特定疾病分类的准确性。首先，利用连续小波变换去除ECG噪声。其次，通过检测R波的峰值位置，提取连续的RR间期。最后，在中国心血管疾病数">
+<meta property="og:description" content="基于 CNN-BiLSTM 神经网络的8导联ECG时序数据分类的可解释性分析  摘要　　心血管疾病具有危急值属性，通过筛查第一时间发现心电危急值具有重要意义。利用 CNN-BiLSTM模型结合8导联ECG数据的时间特性和空间特征，可以有效地提高特定疾病分类的准确性。首先，利用连续小波变换去除ECG噪声。其次，通过检测R波的峰值位置，提取连续的RR间期。最后，在中国心血管疾病数据库（Chinese">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-16T07:29:18.813Z">
+<meta property="og:updated_time" content="2019-10-21T13:04:04.643Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="One Day One More">
-<meta name="twitter:description" content="基于 BiLSTM- Attention 神经网络的8导联ECG时序数据分类的可解释性分析    摘要心血管疾病具有危急值属性，通过筛查第一时间发现心电危急值具有重要意义。利用 BiLSTM-Attention模型结合8导联ECG数据的节律和空间特征，可以有效地提高特定疾病分类的准确性。首先，利用连续小波变换去除ECG噪声。其次，通过检测R波的峰值位置，提取连续的RR间期。最后，在中国心血管疾病数">
+<meta name="twitter:description" content="基于 CNN-BiLSTM 神经网络的8导联ECG时序数据分类的可解释性分析  摘要　　心血管疾病具有危急值属性，通过筛查第一时间发现心电危急值具有重要意义。利用 CNN-BiLSTM模型结合8导联ECG数据的时间特性和空间特征，可以有效地提高特定疾病分类的准确性。首先，利用连续小波变换去除ECG噪声。其次，通过检测R波的峰值位置，提取连续的RR间期。最后，在中国心血管疾病数据库（Chinese">
 
 
 
@@ -309,7 +309,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  250
+                  1.1k
                 </span>
               
 
@@ -325,7 +325,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -346,13 +346,50 @@
       
 
       
-        <center><strong>基于 BiLSTM- Attention 神经网络的8导联ECG时序数据分类的可解释性分析</strong></center>
+        <center><strong>基于 CNN-BiLSTM 神经网络的8导联ECG时序数据分类的可解释性分析</strong></center>
 
-
-
-<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>心血管疾病具有危急值属性，通过筛查第一时间发现心电危急值具有重要意义。利用 BiLSTM-Attention模型结合8导联ECG数据的节律和空间特征，可以有效地提高特定疾病分类的准确性。首先，利用连续小波变换去除ECG噪声。其次，通过检测R波的峰值位置，提取连续的RR间期。最后，在中国心血管疾病数据库（Chinese Cardiovascular Disease Database，CCDD）中挑选具有较高危急值病种的8导联数据作为对象，使用BiLSTM-Attention算法分类识别，并使用郑州大学第一附属医院多导联临床数据进行验证。结果表明， BiLSTM-Attention模型结合8导联ECG数据的节律和空间特征，比本文讨论的其他方法具有更高的可解释性。 </p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>　　心血管疾病具有危急值属性，通过筛查第一时间发现心电危急值具有重要意义。利用 CNN-BiLSTM模型结合8导联ECG数据的时间特性和空间特征，可以有效地提高特定疾病分类的准确性。首先，利用连续小波变换去除ECG噪声。其次，通过检测R波的峰值位置，提取连续的RR间期。最后，在中国心血管疾病数据库（Chinese Cardiovascular Disease Database，CCDD）中挑选具有较高危急值病种的8导联数据作为对象，使用CNN-BiLSTM算法分类识别，并使用郑州大学第一附属医院多导联临床数据进行验证。结果表明， CNN-BiLSTM模型结合8导联ECG数据的节律和空间特征，比本文讨论的其他方法具有更高的可解释性。 </p>
 <a id="more"></a>
-<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><h1 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h1><p>1、心血管疾病危急值</p>
+<p>2、其他论文ECG诊断算法策略：传统，cnn ，lstm</p>
+<p>3、临床使用12导联心电设备，医生诊断需要多导联综合考虑，用单导联数据预测疾病没有意义</p>
+<p>4、ECG是时序数据具有空间特性，导联之间具有空间特征。</p>
+<p> 受心血管疾病具有危急值的特点，临床使用12导联心电设备诊断疾病和ECG是时序数据具有空间特性，导联之间具有空间特征的启发，提出了一种有效的CNN-BiLSTM混合模型来预测分类。  CNN自动提取各个导联之间的空间特征，BiLSTM提取复杂ECG信号的时序特征，使网络能够有效地训练所有类别。实验结果表明，所提出的模型在多导联心电图数据上达到了最先进的性能，并且优于其他的结果，此外我们还做了模型的鲁棒性分析，分别在去噪和未去噪的ECG数据集上，不同数据集上进行了实验 。实验结果表明，模型对输入的信号质量不敏感，具有鲁棒性。</p>
+<p>5、 本文的其余部分安排如下 ：</p>
+<p>　　1、提出一种CNN-BiLSTM模型，针对八导联ECG数据特点，对具有危急值的疾病进行预测分类</p>
+<p>　　2、</p>
+<h1 id="心电信号预处理和特征提取"><a href="#心电信号预处理和特征提取" class="headerlink" title="心电信号预处理和特征提取"></a>心电信号预处理和特征提取</h1><p>采用小波变换方法，去除信号噪声</p>
+<p>提取RR间期数据，作为模型训练数据</p>
+<h2 id="ECG去噪声"><a href="#ECG去噪声" class="headerlink" title="ECG去噪声"></a>ECG去噪声</h2><p>1、连续小波变换去除ecg噪声的可行性分析</p>
+<p>2、去噪前，去噪后波形对比图</p>
+<h2 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h2><p>1、提取RR间期数据的策略</p>
+<p>2、提取后送入模型的数据特点</p>
+<h1 id="CNN-BiLSTM神经网络"><a href="#CNN-BiLSTM神经网络" class="headerlink" title="CNN-BiLSTM神经网络"></a>CNN-BiLSTM神经网络</h1><p>八导联ecg数据时间特征，空间特征，各个导联之间的计算关系介绍，医生诊断疾病的策略</p>
+<h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>cnn结构</p>
+<p>cnn处理图像数据，空间特征的优势</p>
+<h2 id="BiLSTM"><a href="#BiLSTM" class="headerlink" title="BiLSTM"></a>BiLSTM</h2><p>BiLSTM网络结构介绍</p>
+<p> 时序任务的处理，BiLSTM在自然语言处理和语音识别领域很重要 </p>
+<h2 id="CNN-BiLSTM神经网络结构"><a href="#CNN-BiLSTM神经网络结构" class="headerlink" title="CNN-BiLSTM神经网络结构"></a>CNN-BiLSTM神经网络结构</h2><p>结合cnn提取空间特征，BiLSTM提取时序信息的混合网络</p>
+<p>网络结构如图：</p>
+<p><img src alt></p>
+<p>网络结构参数如图：</p>
+<p>1、一方面八导联数据作为二维矩阵整体送入CNN网络提取空间特征</p>
+<p>2、另一方面八导联数据分成8个一维时序数据并行送入BiLSTM网络提取时间特征</p>
+<p>3、两部分拼接后送入全连接层</p>
+<p>4、预测分类</p>
+<h1 id="实验和结果"><a href="#实验和结果" class="headerlink" title="实验和结果"></a>实验和结果</h1><p>简单介绍实验步骤：预处理降噪，RR间期提取，预测分类，模型鲁棒性分析</p>
+<h2 id="实验数据"><a href="#实验数据" class="headerlink" title="实验数据"></a>实验数据</h2><p>CCDD  有八导联数据， MIT只有标二导联，不符合要求</p>
+<h2 id="模型训练和参数选择"><a href="#模型训练和参数选择" class="headerlink" title="模型训练和参数选择"></a>模型训练和参数选择</h2><p>1、本实验选用的参数总表</p>
+<p>2、dropout评估</p>
+<p>3、batch size 评估</p>
+<h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><p>灵敏度、特异性、准确度、</p>
+<h2 id="实验结果与分析"><a href="#实验结果与分析" class="headerlink" title="实验结果与分析"></a>实验结果与分析</h2><p>混淆矩阵、</p>
+<p>（和其他论文的准确度对比）、</p>
+<p>鲁棒性分析对比实验：</p>
+<p>　　策略1、原来的数据集不去噪，只提取RR间期</p>
+<p>　　策略2、其他比赛数据集，降噪，提取RR间期</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>开题：在此基础上，引入分布式训练机制</p>
+
       
     </div>
     
@@ -533,7 +570,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引言"><span class="nav-number">2.</span> <span class="nav-text">引言</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">2.</span> <span class="nav-text">介绍</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍-1"><span class="nav-number"></span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#心电信号预处理和特征提取"><span class="nav-number"></span> <span class="nav-text">心电信号预处理和特征提取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECG去噪声"><span class="nav-number"></span> <span class="nav-text">ECG去噪声</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征提取"><span class="nav-number"></span> <span class="nav-text">特征提取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CNN-BiLSTM神经网络"><span class="nav-number"></span> <span class="nav-text">CNN-BiLSTM神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN"><span class="nav-number"></span> <span class="nav-text">CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BiLSTM"><span class="nav-number"></span> <span class="nav-text">BiLSTM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN-BiLSTM神经网络结构"><span class="nav-number"></span> <span class="nav-text">CNN-BiLSTM神经网络结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验和结果"><span class="nav-number"></span> <span class="nav-text">实验和结果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验数据"><span class="nav-number"></span> <span class="nav-text">实验数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型训练和参数选择"><span class="nav-number"></span> <span class="nav-text">模型训练和参数选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评价指标"><span class="nav-number"></span> <span class="nav-text">评价指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果与分析"><span class="nav-number"></span> <span class="nav-text">实验结果与分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结论"><span class="nav-number"></span> <span class="nav-text">结论</span></a></li></div>
             
 
           </div>
